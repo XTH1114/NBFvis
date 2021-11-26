@@ -11,7 +11,8 @@
 #' @param var_names the names of columns about expressions like proteins or genes in the argument \strong{origin_data}.
 #' @return an interactive shiny app for the UMAP embeddings.
 #' @importFrom umap umap
-#' @importFrom dplyr mutate select filter everything left_join group_by spread
+#' @importFrom dplyr mutate select filter everything left_join group_by 
+#' @importFrom tidyr spread
 #' @importFrom magrittr %>% %<>%
 #' @importFrom heatmaply heatmaply
 #' @rawNamespace import(ggplot2, except = last_plot)
