@@ -34,13 +34,9 @@
 #' @param ... other parameters passed to the \strong{method} argument.
 #' @return a neighborhood quantile matrix. Each row represents quantiles of reduced features in the neighborhood of one cell. \cr
 #' The first is the number of cells in the corresponding neighborhood, which is used to check whether there are some abnormal neighborhoods. 
-#' @importFrom magrittr %>% 
-#' @importFrom dplyr mutate
-#' @importFrom dplyr filter
+#' @importFrom magrittr %>%
+#' @importFrom dplyr mutate filter bind_rows select everything
 #' @importFrom rlang set_names
-#' @importFrom dplyr bind_rows
-#' @importFrom dplyr select
-#' @importFrom dplyr everything
 #' @export
 
 quantiles_matrix <- function(data,
@@ -90,12 +86,20 @@ quantiles_matrix <- function(data,
   quantile_list <- vector(mode = "list", length = n)
   for(i in 1:n){
     temp_quantile <- neighbour[[i]] %>%
-      apply(2, quantile,probs = seq(min_percentile,max_percentile,length.out = quantile_number)) %>% c()
+      apply(2, quantile,probs = seq(min_percentile,max_percentile,length.out = quantile_number)) %>% 
+      c()
     temp_quantile <- c(nrow(neighbour[[i]]), temp_quantile) %>%
-      set_names(c("n_neighbor",
-                  paste0(rep(paste0("Var",1:max_column,"_"),
-                             each = quantile_number),
-                         rep(seq(min_percentile,max_percentile,length.out = quantile_number),max_column))))
+      set_names(
+        c("n_neighbor",
+          paste0(
+            rep(paste0("Var",1:max_column,"_"),
+                each = quantile_number),
+            rep(seq(min_percentile,max_percentile,
+                    length.out = quantile_number),
+                max_column)
+          )
+        )
+      )
     quantile_list[[i]] <- temp_quantile
     if(i %% ceiling(n*0.1) == 0){cat("- ")}
   }

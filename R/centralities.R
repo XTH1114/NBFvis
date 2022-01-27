@@ -6,36 +6,11 @@
 #' @param g A network object (g stands for "graph").
 #' @param center_index The index or name of the vertex (center cell) whose centralities we are interested in.
 #' @importFrom igraph V
-#' @importFrom igraph degree
-#' @importFrom igraph betweenness
-#' @importFrom igraph closeness
-#' @importFrom igraph eigen_centrality
-#' @importFrom igraph eccentricity
-#' @importFrom igraph subgraph_centrality
-#' @importFrom igraph get.adjacency
-#' @importFrom sna loadcent
-#' @importFrom sna gilschmidt
-#' @importFrom sna infocent
-#' @importFrom sna stresscent
-#' @importFrom centiserve averagedis
-#' @importFrom centiserve barycenter
-#' @importFrom centiserve closeness.latora
-#' @importFrom centiserve closeness.residual
-#' @importFrom centiserve communibet
-#' @importFrom centiserve crossclique
-#' @importFrom centiserve decay
-#' @importFrom centiserve diffusion.degree
-#' @importFrom centiserve entropy
-#' @importFrom centiserve geokpath
-#' @importFrom centiserve laplacian
-#' @importFrom centiserve leverage
-#' @importFrom centiserve lincent
-#' @importFrom centiserve lobby
-#' @importFrom centiserve markovcent
-#' @importFrom centiserve mnc
-#' @importFrom centiserve radiality
-#' @importFrom centiserve semilocal
-#' @importFrom centiserve topocoefficient
+#' @importFrom igraph degree betweenness closeness eigen_centrality eccentricity subgraph_centrality get.adjacency
+#' @importFrom sna loadcent gilschmidt infocent stresscent
+#' @importFrom centiserve averagedis barycenter closeness.latora closeness.residual
+#' @importFrom centiserve communibet crossclique decay diffusion.degree entropy
+#' @importFrom centiserve geokpath laplacian leverage lincent lobby markovcent mnc radiality semilocal topocoefficient
 #' @export
 
 
@@ -46,7 +21,7 @@ centralities <- function(g, center_index){
     return(rep(NA,num_stats))
   }
   relative_index <- V(g)$name == as.character(center_index)
-  
+
   #igraph
   statistics[1] <- length(V(g))
   statistics[2] <- degree(g,v = center_index)
@@ -55,14 +30,14 @@ centralities <- function(g, center_index){
   statistics[5] <- eigen_centrality(g)$vector[relative_index]
   statistics[6] <- 1/eccentricity(g,vids = center_index)
   statistics[7] <- subgraph_centrality(g)[relative_index]
-  
+
   A <- get.adjacency(g,sparse=F)
  #sna
   statistics[8] <- loadcent(A,nodes = relative_index)
   statistics[9] <- gilschmidt(A,nodes = relative_index)
   statistics[10] <- infocent(A,nodes = relative_index)
   statistics[11] <- stresscent(A,nodes = relative_index)
-  
+
   # centiserve
   statistics[12] <- 1/averagedis(g,vids = center_index)
   statistics[13] <- barycenter(g,vids = center_index)
