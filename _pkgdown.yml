@@ -1,9 +1,0 @@
-template:
-  bootstrap: 5
-  bootswatch: cerulean
-
-navbar:
-  structure:
-    left:  [intro, reference, articles, tutorials, news]
-    right: [search, github]
-
