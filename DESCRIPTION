@@ -1,20 +1,19 @@
 Package: NBFvis
-Title: The Visualization of Neighborhood-Based Featurization
+Title: Visualization of Neighborhood-Based Features
 Version: 1.0.0
 Authors@R: 
     c(person(given = "Tinghui",
            family = "Xu",
            role = c("aut", "cre","ths"),
            email = "txu98@wisc.edu",
-           comment = c(ORCID = "YOUR-ORCID-ID")),
+           comment = c(ORCID = "0000-0003-0611-5872")),
 	person(given = "Kris",
            family = "Sankaran",
            role = c("aut", "cre","ths"),
            email = "ksankaran@wisc.edu",
-           comment = c(ORCID = "YOUR-ORCID-ID")))
+           comment = c(ORCID = "0000-0002-9415-1971")))
 Description: This package is used for visualization of spatial Omics datasets. We construct the neighborhood-based featurization using neighborhood quantiles and network centralities. Then we use Uniform Manifold Approximation and Projection(UMAP) as the dimensionality reduction method to get low dimensional embeddings of cells, from which potential spatially consistent microenvironments could be found. The relative paper is available on https://arxiv.org/abs/2112.00902.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-        license
+License: CC0
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
@@ -22,6 +21,7 @@ RoxygenNote: 7.1.2
 Depends: R (>= 2.10)
 NeedsCompilation: no
 Packaged: 2021-12-02 20:35:14 UTC; Tinghui Xu
-Author: Tinghui Xu [aut, cre, ths] (YOUR-ORCID-ID)
-	Kris Sankaran [aut, cre, ths] (YOUR-ORCID-ID)
+Author: Tinghui Xu [aut, cre, ths] (0000-0003-0611-5872)
+	Kris Sankaran [aut, cre, ths] (0000-0002-9415-1971)
 Maintainer: Tinghui Xu <txu98@wisc.edu>
+
