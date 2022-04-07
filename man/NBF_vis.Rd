@@ -20,6 +20,7 @@ an interactive shiny app for the UMAP embeddings.
 }
 \description{
 The function could apply UMAP to the featurization matrix of a special omics dataset. \cr
-This matrix could be a neighborhood matrix, which is the combination of the quantile matrix and network matrix (from quantile_matrix and network_matrix, respectively) \cr
+This matrix could be a neighborhood matrix, which is the combination of the quantile \cr
+matrix and network matrix (from quantile_matrix and network_matrix, respectively) \cr
 Then, a shiny app will visualize the UMAP embeddings of the spatial omics data.
 }
