@@ -1,9 +1,7 @@
-template:
-  bootstrap: 5
-  bootswatch: cerulean
-
-navbar:
-  structure:
-    left:  [intro, reference, articles, tutorials, news]
-    right: [search, github]
+pandoc: '2.13'
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles:
+  Example in the paper: Example in the paper.html
+last_built: 2022-04-08T00:56Z
 
