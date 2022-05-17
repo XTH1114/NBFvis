@@ -12,7 +12,7 @@
 #' @importFrom centiserve communibet crossclique decay diffusion.degree entropy
 #' @importFrom centiserve geokpath laplacian leverage lincent lobby markovcent mnc radiality semilocal topocoefficient
 #' @export
-
+#' @references https://www.r-bloggers.com/2018/12/network-centrality-in-r-an-introduction/
 
 centralities <- function(g, center_index){
   num_stats <- 29

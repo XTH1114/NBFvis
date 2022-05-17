@@ -15,3 +15,6 @@ centralities(g, center_index)
 This function is used to calculate the network statistics with respect to one specific vertex \cr
 in a network, most of which are various centralities.
 }
+\references{
+https://www.r-bloggers.com/2018/12/network-centrality-in-r-an-introduction/
+}
