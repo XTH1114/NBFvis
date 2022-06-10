@@ -36,7 +36,7 @@ Here is the example that reproduces the analysis in [our paper](https://arxiv.or
 We first load the packages and dataset we need. The dataset patient4 is a 6643 × 59 data frame of all cells in the tissue section of Patient 4 in the TNBC data [Keren et al., 2019]. We have added two columns named x center and y center, which are the coordinates of the calculated cell centers from the spatial raster data.
 
 ```{r eval=F}
-library(testpackage)
+library(NBFvis)
 library(dplyr)
 data(patient4)
 ```
