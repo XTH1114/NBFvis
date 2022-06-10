@@ -1,4 +1,4 @@
-library(testpackage)
+library(NBFvis)
 library(dplyr)
 data(patient4)
 Quantiles_patient4 <- quantiles_matrix(
