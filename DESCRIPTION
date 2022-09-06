@@ -13,7 +13,7 @@ Authors@R:
            email = "ksankaran@wisc.edu",
            comment = c(ORCID = "0000-0002-9415-1971")))
 Description: This package is used for visualization of spatial Omics datasets. We construct the neighborhood-based featurization using neighborhood quantiles and network centralities. Then we use Uniform Manifold Approximation and Projection(UMAP) as the dimensionality reduction method to get low dimensional embeddings of cells, from which potential spatially consistent microenvironments could be found. The relative paper is available on https://arxiv.org/abs/2112.00902.
-License: CC0
+License: GNU General Public License
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
